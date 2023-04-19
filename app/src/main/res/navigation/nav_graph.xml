@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/foodMenu">
+
+    <fragment
+        android:id="@+id/foodMenu"
+        android:name="com.example.samplejavacfd.FoodMenu"
+        android:label="fragment_food_menu"
+        tools:layout="@layout/fragment_food_menu" >
+        <action
+            android:id="@+id/action_foodMenu_to_hamburgerDetail"
+            app:destination="@id/hamburgerDetail" />
+        <action
+            android:id="@+id/action_foodMenu_to_pizzaDetail"
+            app:destination="@id/pizzaDetail" />
+        <action
+            android:id="@+id/action_foodMenu_to_soupDetail"
+            app:destination="@id/soupDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/hamburgerDetail"
+        android:name="com.example.samplejavacfd.HamburgerDetail"
+        android:label="fragment_hamburger_detail"
+        tools:layout="@layout/fragment_hamburger_detail" >
+        <action
+            android:id="@+id/action_hamburgerDetail_to_cartDetail"
+            app:destination="@id/cartDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaDetail"
+        android:name="com.example.samplejavacfd.PizzaDetail"
+        android:label="fragment_pizza_detail"
+        tools:layout="@layout/fragment_pizza_detail" >
+        <action
+            android:id="@+id/action_pizzaDetail_to_cartDetail"
+            app:destination="@id/cartDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/soupDetail"
+        android:name="com.example.samplejavacfd.SoupDetail"
+        android:label="fragment_soup_detail"
+        tools:layout="@layout/fragment_soup_detail" >
+        <action
+            android:id="@+id/action_soupDetail_to_cartDetail"
+            app:destination="@id/cartDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartDetail"
+        android:name="com.example.samplejavacfd.CartDetail"
+        android:label="fragment_cart_detail"
+        tools:layout="@layout/fragment_cart_detail" >
+        <action
+            android:id="@+id/action_cartDetail_to_foodMenu"
+            app:destination="@id/foodMenu" />
+        <argument
+            android:name="foodQuantity"
+            app:argType="integer" />
+        <argument
+            android:name="foodName"
+            app:argType="string" />
+        <argument
+            android:name="foodCost"
+            app:argType="integer" />
+    </fragment>
+</navigation>

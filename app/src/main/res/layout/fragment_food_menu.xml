@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".FoodMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondaryDark">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="124dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="2sp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toBottomOf="@+id/soup_button"
+            app:layout_constraintStart_toStartOf="@+id/soup_button"
+            app:srcCompat="@drawable/soup" />
+
+        <Button
+            android:id="@+id/soup_button"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizza_button" />
+
+        <TextView
+            android:id="@+id/item1_title5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Soup"
+            android:textColor="@color/primaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/soup_button" />
+
+        <TextView
+            android:id="@+id/item1_title6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$4"
+            android:textColor="@color/primaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title5" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toBottomOf="@+id/soup_button"
+            app:layout_constraintEnd_toEndOf="@+id/soup_button"
+            app:layout_constraintTop_toTopOf="@+id/soup_button"
+            app:srcCompat="@drawable/chevron_right" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="124dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="2sp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toBottomOf="@+id/pizza_button"
+            app:layout_constraintStart_toStartOf="@+id/pizza_button"
+            app:srcCompat="@drawable/pizza" />
+
+        <Button
+            android:id="@+id/pizza_button"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:backgroundTint="@color/white"
+            android:text=" "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hamburger_button" />
+
+        <TextView
+            android:id="@+id/item1_title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Pizza"
+            android:textColor="@color/primaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/pizza_button" />
+
+        <TextView
+            android:id="@+id/item1_title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$8"
+            android:textColor="@color/primaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toBottomOf="@+id/pizza_button"
+            app:layout_constraintEnd_toEndOf="@+id/pizza_button"
+            app:layout_constraintTop_toTopOf="@+id/pizza_button"
+            app:srcCompat="@drawable/chevron_right" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="124dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="35dp"
+            android:elevation="2sp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toTopOf="@+id/pizza_button"
+            app:layout_constraintStart_toStartOf="@+id/hamburger_button"
+            app:srcCompat="@drawable/hamburger" />
+
+        <Button
+            android:id="@+id/hamburger_button"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/white"
+            android:text=" "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageButton
+            android:id="@+id/cart_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/primaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/cart"
+            app:tint="@color/primaryGreen" />
+
+        <TextView
+            android:id="@+id/item1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:text="Hamburger"
+            android:textColor="@color/primaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/hamburger_button" />
+
+        <TextView
+            android:id="@+id/item1_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="$12"
+            android:textColor="@color/primaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:translationZ="200sp"
+            app:layout_constraintBottom_toBottomOf="@+id/hamburger_button"
+            app:layout_constraintEnd_toEndOf="@+id/hamburger_button"
+            app:layout_constraintTop_toTopOf="@+id/hamburger_button"
+            app:layout_constraintVertical_bias="0.405"
+            app:srcCompat="@drawable/chevron_right" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="550dp"
+            android:src="@drawable/cci_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="123dp"
+            android:layout_height="50dp"
+            android:text="A Classic American Hamburger"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="123dp"
+            android:layout_height="50dp"
+            android:text="A Slice Straight Out of Italy"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title4" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="123dp"
+            android:layout_height="50dp"
+            android:text="A Bowl from your Mom's Kitchen"
+            android:translationZ="200sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/item1_title6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
