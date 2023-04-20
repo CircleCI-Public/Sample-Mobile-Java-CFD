@@ -4,7 +4,7 @@ orbs:
   gradle: circleci/gradle@3.0.0
 
 jobs:
-  kotlin-build:
+  java-build:
     machine:
       image: android:2023.04.1
     steps:
@@ -13,20 +13,20 @@ jobs:
       - gradle/collect_test_results
       - store_artifacts:
           path: report.json
-  kotlin-test:
+  java-test:
     machine:
       image: android:2023.04.1
     steps:
       - checkout
       - run: echo $ANDROID_HOME
       - android/start-emulator-and-run-tests:
-          avd-name: 'kotlin'
+          avd-name: 'java'
           system-image: system-images;android-UpsideDownCake;google_apis;x86_64
       - gradle/collect_test_results
       
 
 workflows:
-  test-and-build-kotlin:
+  test-and-build-java:
     jobs:
       - android/run-ui-tests:
           executor:
@@ -45,9 +45,9 @@ workflows:
           requires:
             - gradle/test
             - android/run-ui-tests
-      - kotlin-test
-      - kotlin-build:
+      - java-test
+      - java-build:
           requires:
-            - kotlin-test
+            - java-test
       
      
