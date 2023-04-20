@@ -1,0 +1,53 @@
+version: 2.1
+orbs:
+  android: circleci/android@2.2.0
+  gradle: circleci/gradle@3.0.0
+
+jobs:
+  kotlin-build:
+    machine:
+      image: android:2023.04.1
+    steps:
+      - checkout
+      - run: ./gradlew build -x lint
+      - gradle/collect_test_results
+      - store_artifacts:
+          path: report.json
+  kotlin-test:
+    machine:
+      image: android:2023.04.1
+    steps:
+      - checkout
+      - run: echo $ANDROID_HOME
+      - android/start-emulator-and-run-tests:
+          avd-name: 'kotlin'
+          system-image: system-images;android-UpsideDownCake;google_apis;x86_64
+      - gradle/collect_test_results
+      
+
+workflows:
+  test-and-build-kotlin:
+    jobs:
+      - android/run-ui-tests:
+          executor:
+            name: android/android-machine
+            tag: "2023.04.1"
+          system-image: "system-images;android-UpsideDownCake;google_apis;x86_64"
+          install-system-image: true
+      - gradle/test:
+          executor:
+            name: android/android-docker
+            tag: "2023.04.1"
+      - gradle/run:
+          executor:
+            name: android/android-machine
+            tag: "2023.04.1"
+          requires:
+            - gradle/test
+            - android/run-ui-tests
+      - kotlin-test
+      - kotlin-build:
+          requires:
+            - kotlin-test
+      
+     
