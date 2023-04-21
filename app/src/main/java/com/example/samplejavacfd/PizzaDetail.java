@@ -1,4 +1,4 @@
-package com.example.samplejavacfd;
+package com.samplejavacfd;
 
 import android.os.Bundle;
 
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.samplejavacfd.PizzaDetailDirections;
+import com.samplejavacfd.PizzaDetailDirections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -97,7 +97,7 @@ public class PizzaDetail extends Fragment {
         view.findViewById(R.id.add_to_cart_pizza).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.example.samplejavacfd.PizzaDetailDirections.ActionPizzaDetailToCartDetail PizzaAction = PizzaDetailDirections.actionPizzaDetailToCartDetail(count[0], "Pizza", 8);
+                com.samplejavacfd.PizzaDetailDirections.ActionPizzaDetailToCartDetail PizzaAction = PizzaDetailDirections.actionPizzaDetailToCartDetail(count[0], "Pizza", 8);
                 NavHostFragment.findNavController(PizzaDetail.this).navigate(PizzaAction);
             }
         });

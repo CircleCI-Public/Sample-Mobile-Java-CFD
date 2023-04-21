@@ -1,4 +1,4 @@
-package com.example.samplejavacfd;
+package com.samplejavacfd;
 
 import android.os.Bundle;
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/foodMenu"
-        android:name="com.example.samplejavacfd.FoodMenu"
+        android:name="com.samplejavacfd.FoodMenu"
         android:label="fragment_food_menu"
         tools:layout="@layout/fragment_food_menu" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/hamburgerDetail"
-        android:name="com.example.samplejavacfd.HamburgerDetail"
+        android:name="com.samplejavacfd.HamburgerDetail"
         android:label="fragment_hamburger_detail"
         tools:layout="@layout/fragment_hamburger_detail" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/pizzaDetail"
-        android:name="com.example.samplejavacfd.PizzaDetail"
+        android:name="com.samplejavacfd.PizzaDetail"
         android:label="fragment_pizza_detail"
         tools:layout="@layout/fragment_pizza_detail" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/soupDetail"
-        android:name="com.example.samplejavacfd.SoupDetail"
+        android:name="com.samplejavacfd.SoupDetail"
         android:label="fragment_soup_detail"
         tools:layout="@layout/fragment_soup_detail" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartDetail"
-        android:name="com.example.samplejavacfd.CartDetail"
+        android:name="com.samplejavacfd.CartDetail"
         android:label="fragment_cart_detail"
         tools:layout="@layout/fragment_cart_detail" >
         <action
