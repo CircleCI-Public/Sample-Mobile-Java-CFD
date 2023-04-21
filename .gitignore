@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+google-play-key.json
+my-release-key.jks
+upload-keystore.jks
+keystore.properties

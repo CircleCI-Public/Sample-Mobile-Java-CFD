@@ -1,4 +1,4 @@
-package com.example.samplejavacfd;
+package com.samplejavacfd;
 
 import android.os.Bundle;
 
@@ -95,7 +95,7 @@ public class SoupDetail extends Fragment {
         view.findViewById(R.id.add_to_cart_soup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.example.samplejavacfd.SoupDetailDirections.ActionSoupDetailToCartDetail SoupAction = SoupDetailDirections.actionSoupDetailToCartDetail(count[0], "Soup", 4);
+                com.samplejavacfd.SoupDetailDirections.ActionSoupDetailToCartDetail SoupAction = SoupDetailDirections.actionSoupDetailToCartDetail(count[0], "Soup", 4);
                 NavHostFragment.findNavController(SoupDetail.this).navigate(SoupAction);
             }
         });
