@@ -4,7 +4,7 @@ plugins {
 
 ext.versionMajor = 1
 ext.versionMinor = 0
-ext.versionPatch = 4
+ext.versionPatch = 5
 ext.versionClassifier = null
 ext.isSnapShot = false
 ext.minSdkVersion = 21
@@ -37,6 +37,7 @@ keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 android {
     namespace 'com.samplejavacfd'
     compileSdk 33
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.samplejavacfd"
@@ -63,6 +64,10 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ""
+            debuggable true
+        }
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
