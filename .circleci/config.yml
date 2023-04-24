@@ -9,6 +9,16 @@ jobs:
       image: android:2023.04.1
     steps:
       - checkout
+      - run:
+          name: Decode Android key store
+          command: echo $BASE64_KEYSTORE | base64 -d | tee keystore app/keystore > /dev/null
+      - run:
+          name: Create keystore.properties
+          command: printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=./keystore\nreleaseStorePassword=%s' \
+            $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
+      - run:
+          name: Create Google Play key
+          command: echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: ./gradlew build -x lint
       - gradle/collect_test_results
       - store_artifacts:
@@ -18,7 +28,16 @@ jobs:
       image: android:2023.04.1
     steps:
       - checkout
-      - run: echo $ANDROID_HOME
+      - run:
+          name: Decode Android key store
+          command: echo $BASE64_KEYSTORE | base64 -d | tee keystore app/keystore > /dev/null
+      - run:
+          name: Create keystore.properties
+          command: printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=./keystore\nreleaseStorePassword=%s' \
+            $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
+      - run:
+          name: Create Google Play key
+          command: echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - android/start-emulator-and-run-tests:
           avd-name: 'java'
           system-image: system-images;android-UpsideDownCake;google_apis;x86_64
@@ -44,23 +63,6 @@ jobs:
 workflows:
   test-and-build-java:
     jobs:
-      - android/run-ui-tests:
-          executor:
-            name: android/android-machine
-            tag: "2023.04.1"
-          system-image: "system-images;android-UpsideDownCake;google_apis;x86_64"
-          install-system-image: true
-      - gradle/test:
-          executor:
-            name: android/android-docker
-            tag: "2023.04.1"
-      - gradle/run:
-          executor:
-            name: android/android-machine
-            tag: "2023.04.1"
-          requires:
-            - gradle/test
-            - android/run-ui-tests
       - java-test
       - java-build:
           requires:
@@ -69,3 +71,5 @@ workflows:
           filters: 
             branches:
               only: main
+          requires:
+            - java-build

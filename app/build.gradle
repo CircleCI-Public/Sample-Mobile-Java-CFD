@@ -37,6 +37,7 @@ keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 android {
     namespace 'com.samplejavacfd'
     compileSdk 33
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.samplejavacfd"
@@ -63,6 +64,10 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ""
+            debuggable true
+        }
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
